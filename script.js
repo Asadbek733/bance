@@ -99,6 +99,8 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
+const modal = document.querySelector('.modal');
+const btnModal = document.querySelector('.btn_hidden');
 
 function displayMovements(acc, sort) {
   containerMovements.innerHTML = '';
@@ -225,8 +227,10 @@ btnLogin.addEventListener('click', function (e) {
     acc => inputLoginUsername.value.toLowerCase() == acc.userName
   );
 
+  modal.style.display = 'none';
+
   if (!user || inputLoginPin.value != user.pin) {
-    alert('Login or Password is incorrect');
+    modal.style.display = 'flex';
     return;
   }
   currenUser = user;
@@ -242,6 +246,10 @@ btnLogin.addEventListener('click', function (e) {
 
   updateUI(currenUser);
   userLogOut();
+});
+
+btnModal.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
 
 btnTransfer.addEventListener('click', function (e) {

@@ -296,6 +296,37 @@ h2 {
   font-weight: 600;
 }
 
+.modal {
+  width: 25rem;
+  background-color: red;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 80%;
+  top: 11%;
+  animation-name: modal;
+  border-radius: 20rem;
+}
+
+.modal button {
+  font-size: 3.5rem;
+  background: none;
+  border: none;
+  margin-right: 1rem;
+  color: white;
+  cursor: pointer;
+}
+.modal p {
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: white;
+}
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 810px) {
   nav {
     display: grid;
