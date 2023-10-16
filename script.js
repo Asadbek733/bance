@@ -128,7 +128,7 @@ function displayMovements(acc, sort) {
 
 function displayBalance(movements) {
   let balance = movements.reduce((acc, element) => acc + element, 0);
-  labelBalance.textContent = `${balance}`;
+  labelBalance.textContent = `${balance}$`;
 }
 
 function displaySummary(account) {
@@ -231,6 +231,7 @@ btnLogin.addEventListener('click', function (e) {
 
   if (!user || inputLoginPin.value != user.pin) {
     modal.style.display = 'flex';
+
     return;
   }
   currenUser = user;
